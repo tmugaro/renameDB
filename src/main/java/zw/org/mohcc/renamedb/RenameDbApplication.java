@@ -60,7 +60,7 @@ public class RenameDbApplication implements CommandLineRunner {
 
                         name  = name + "_processed_"+ counters.get(name) + ".sql";
 
-                        System.out.println(name);
+                        log.debug(name);
 
                         counter[0]++;
 
