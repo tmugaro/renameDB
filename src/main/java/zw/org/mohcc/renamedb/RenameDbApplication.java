@@ -1,5 +1,6 @@
 package zw.org.mohcc.renamedb;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,16 +15,19 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-//@SpringBootApplication
-public class RenameDbApplication {
+@SpringBootApplication
+public class RenameDbApplication implements CommandLineRunner {
 
-    public static void main2(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(RenameDbApplication.class, args);
     }
 
-    public static void main(String[] args) throws IOException {
+    @Override
+    public void run(String... args) throws Exception {
 
-        Path dir  = Paths.get("/home/tinashehr/Desktop/data");
+
+//        Path dir  = Paths.get("/home/onismo/Desktop/data");
+        Path dir  = Paths.get("/home/administrator/backups/Script/testdir");
 
         Map<String, Integer> counters  = new HashMap<>();
         int[] counter  =  {0};
@@ -60,13 +64,16 @@ public class RenameDbApplication {
 
 
                         try {
-                            Files.write(new File("/home/tinashehr/Desktop/data/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
+//                            Files.write(new File("/home/onismo/Desktop/data/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
+                            Files.write(new File("/home/administrator/backups/Script/testdir/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
 
                     }
                 }
+            }else{
+                System.out.println("Not a file");
             }
 
 
@@ -74,8 +81,5 @@ public class RenameDbApplication {
 
         Set<String> keySet = counters.keySet();
         System.out.println("Processed " + counter[0] + " sql files. However we have "+ keySet.size() + (keySet.size()==1 ? " database": "databases"));
-
     }
-
-        
-    }
+}
