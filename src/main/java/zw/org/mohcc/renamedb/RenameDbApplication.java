@@ -28,8 +28,8 @@ public class RenameDbApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-        Path dir  = Paths.get("/home/onismo/Desktop/data");
-//        Path dir  = Paths.get("/home/administrator/backups/duplicate_db_handler/test_dir/input");
+//        Path dir  = Paths.get("/home/onismo/Desktop/data");
+        Path dir  = Paths.get("/home/administrator/backups/duplicate_db_handler/test_dir/input");
 
         Map<String, Integer> counters  = new HashMap<>();
         int[] counter  =  {0};
@@ -66,8 +66,8 @@ public class RenameDbApplication implements CommandLineRunner {
 
 
                         try {
-                            Files.write(new File("/home/onismo/Desktop/data/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
-//                            Files.write(new File("/home/administrator/backups/duplicate_db_handler/test_dir/output/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
+//                            Files.write(new File("/home/onismo/Desktop/data/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
+                            Files.write(new File("/home/administrator/backups/duplicate_db_handler/test_dir/output/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -82,7 +82,6 @@ public class RenameDbApplication implements CommandLineRunner {
         });
 
         Set<String> keySet = counters.keySet();
-//        System.out.println("Processed " + counter[0] + " sql files. However we have "+ keySet.size() + (keySet.size()==1 ? " database": "databases"));
         log.debug("Processed " + counter[0] + " sql files. However we have "+ keySet.size() + (keySet.size()==1 ? " database": "databases"));
     }
 }
