@@ -27,7 +27,7 @@ public class RenameDbApplication implements CommandLineRunner {
 
 
 //        Path dir  = Paths.get("/home/onismo/Desktop/data");
-        Path dir  = Paths.get("/home/administrator/backups/Script/testdir");
+        Path dir  = Paths.get("/home/administrator/backups/duplicate_db_handler/test_dir/input");
 
         Map<String, Integer> counters  = new HashMap<>();
         int[] counter  =  {0};
@@ -65,7 +65,7 @@ public class RenameDbApplication implements CommandLineRunner {
 
                         try {
 //                            Files.write(new File("/home/onismo/Desktop/data/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
-                            Files.write(new File("/home/administrator/backups/Script/testdir/out/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
+                            Files.write(new File("/home/administrator/backups/duplicate_db_handler/test_dir/output/"+ name).toPath(), content.getBytes(StandardCharsets.UTF_8));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
