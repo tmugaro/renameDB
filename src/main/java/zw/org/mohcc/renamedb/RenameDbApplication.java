@@ -47,7 +47,7 @@ public class RenameDbApplication implements CommandLineRunner {
                     String line;
                     while ((line = br.readLine()) != null) {
                         // process the line.
-                        if (line.startsWith(s)) {
+                        if (line.contains(s) && line.startsWith(s)) {
                             String sqlLine = br.readLine();
                             String[] tokens = sqlLine.split(",");
                             if (tokens.length > 0) {
@@ -64,7 +64,6 @@ public class RenameDbApplication implements CommandLineRunner {
 
                             break;
                         }
-
 
                     }
                 }
