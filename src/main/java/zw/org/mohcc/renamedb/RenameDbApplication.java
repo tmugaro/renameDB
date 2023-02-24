@@ -46,7 +46,7 @@ public class RenameDbApplication implements CommandLineRunner {
                 try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                     String line;
                     while ((line = br.readLine()) != null) {
-                        // process the line.
+                        // process
                         if (line.contains(s) && line.startsWith(s)) {
                             String sqlLine = br.readLine();
                             String[] tokens = sqlLine.split(",");
