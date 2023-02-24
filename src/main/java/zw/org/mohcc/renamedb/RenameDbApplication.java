@@ -30,12 +30,13 @@ public class RenameDbApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-        Path dir = Paths.get("/home/onismo/Desktop/data");
+//        Path dir = Paths.get("/home/onismo/Desktop/data");
 //        Path dir  = Paths.get("/home/administrator/backups/duplicate_db_handler/test_dir/input");
 
         Map<String, Integer> counters = new HashMap<>();
         int[] counter = {0};
-        File folder = new File("/home/onismo/Desktop/data");
+//        File folder = new File("/home/onismo/Desktop/data");
+        File folder = new File("/home/administrator/backups/duplicate_db_handler/test_dir/input");
         File[] listOfFiles = folder.listFiles();
         String s = "/*!40000 ALTER TABLE `laboratory_request_order` DISABLE KEYS */;";
         assert listOfFiles != null;
