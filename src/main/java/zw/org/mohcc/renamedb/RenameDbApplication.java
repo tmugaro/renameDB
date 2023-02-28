@@ -36,7 +36,8 @@ public class RenameDbApplication implements CommandLineRunner {
         Map<String, Integer> counters = new HashMap<>();
         int[] counter = {0};
 //        File folder = new File("/home/onismo/Desktop/data");
-        File folder = new File("/home/administrator/backups/duplicate_db_handler/test_dir/input");
+//        File folder = new File("/home/administrator/backups/duplicate_db_handler/test_dir/input");
+        File folder = new File("/mnt/site-dbs/duplicate_db_handler/test_dir/input");
         File[] listOfFiles = folder.listFiles();
         String s = "/*!40000 ALTER TABLE `laboratory_request_order` DISABLE KEYS */;";
         assert listOfFiles != null;
